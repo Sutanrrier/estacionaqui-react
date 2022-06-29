@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+}
+
+.logo-image {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 20%;
+}
+
+.description-container {
+    padding: 1rem;
+
+}
+
+.description-text {
+    padding: 1rem;
+    text-align: justify;
+}
