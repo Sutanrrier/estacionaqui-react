@@ -1,7 +1,27 @@
+import RedirectOption from "../components/RedirectOption";
+
+import searchImage from "../images/searchImage.svg";
+import estacionamentoImage from "../images/estacionamentoImage.svg";
+
+import "./MainPage.css";
 function Estacionamentos() {
   return (
     <div>
-      <h1>Estacionamentos</h1>
+      <div className="content-container">
+        <RedirectOption
+          title="CADASTRO"
+          image={estacionamentoImage}
+          btnText="Cadastrar novo estacionamento"
+          url="teste"
+        />
+
+        <RedirectOption
+          title="CONSULTA"
+          image={searchImage}
+          btnText="Consultar estacionamentos atuais"
+          url="teste"
+        />
+      </div>
     </div>
   );
 }

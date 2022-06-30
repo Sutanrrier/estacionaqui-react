@@ -1,10 +1,8 @@
-import { useNavigate } from "react-router-dom";
-
 import RedirectOption from "../components/RedirectOption";
 
 import searchImage from "../images/searchImage.svg";
 import veiculoImage from "../images/veiculoImage.svg";
-import "./Carros.css";
+import "./MainPage.css";
 
 function Carros() {
   return (
