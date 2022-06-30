@@ -5,7 +5,9 @@ import App from "./pages/App";
 import Carros from "./pages/Carros";
 import Estacionamentos from "./pages/Estacionamentos";
 import ErrorPage from "./pages/ErrorPage";
+
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function AppRoutes() {
   return (
@@ -18,6 +20,8 @@ function AppRoutes() {
         <Route path="/estacionamentos" element={<Estacionamentos />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   );
 }
