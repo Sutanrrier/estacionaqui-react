@@ -15,13 +15,17 @@
 
 .navigation-link {
     font-size: 1.5rem;
+    margin: 0 0.5rem;
     padding: 0.5rem;
     text-decoration: none;
     color: white;
 }
 
 .navigation-link:hover {
+    border-radius: 0.5rem;
     color: aquamarine;
+    background-color: #555;
+    transition: all ease 0.3s;
 }
 
 .navigation-logo {

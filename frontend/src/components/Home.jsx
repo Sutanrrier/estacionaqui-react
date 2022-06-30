@@ -10,17 +10,13 @@ function Home() {
       </div>
       <div className="description-container">
         <p className="description-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. In ea
-          voluptates iusto, velit ut porro. Libero assumenda consequuntur eaque.
-          Velit ipsa incidunt unde, numquam dolorum animi similique laborum
-          optio obcaecati ut ipsum voluptate quidem! Omnis voluptate, id quas
-          ipsum vitae corrupti architecto non et officia corporis nulla soluta
-          voluptates neque earum rerum alias odio quod fugiat distinctio
-          accusamus cupiditate minus labore porro sequi! Praesentium consectetur
-          velit dignissimos doloremque veritatis sunt? Eius, numquam, esse rem
-          consectetur ex temporibus sint accusamus molestias, quis officia minus
-          provident ab eaque earum laboriosam sapiente sed. Voluptas, maiores
-          repellendus? Harum asperiores iure explicabo amet, ad porro?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+          ducimus voluptates cumque accusamus. Doloribus nobis possimus
+          mollitia. Libero temporibus, ipsam iusto voluptatum aspernatur
+          asperiores at velit quaerat, porro nobis aliquam obcaecati nihil
+          incidunt! Fuga, optio expedita repellat animi iste iusto aliquid
+          beatae minus explicabo praesentium, commodi officia corporis aperiam
+          distinctio?
         </p>
         <p className="description-text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet labore
