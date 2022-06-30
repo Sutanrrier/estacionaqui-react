@@ -27,6 +27,7 @@
 }
 
 .option-button {
+    font-weight: bold;
     background-color: red;
     font-size: 1rem;
     padding: 1rem;

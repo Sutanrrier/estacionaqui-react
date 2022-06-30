@@ -7,7 +7,7 @@ function RedirectOption(props) {
   let navigate = useNavigate();
 
   function handleButtonClick() {
-    navigate(`/${props.url}`);
+    navigate(props.url);
   }
 
   return (

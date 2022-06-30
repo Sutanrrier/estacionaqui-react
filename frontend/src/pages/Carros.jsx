@@ -1,3 +1,4 @@
+import React from "react";
 import RedirectOption from "../components/RedirectOption";
 
 import searchImage from "../images/searchImage.svg";
@@ -12,14 +13,14 @@ function Carros() {
           title="CADASTRO"
           image={veiculoImage}
           btnText="Cadastrar novo veículo"
-          url="teste"
+          url="/cadastro/carros"
         />
 
         <RedirectOption
           title="CONSULTA"
           image={searchImage}
           btnText="Consultar veículos atuais"
-          url="teste"
+          url="/consulta/carros"
         />
       </div>
     </div>
