@@ -29,3 +29,17 @@
 .table td {
     background-color: whitesmoke;
 }
+
+.table button {
+    background: none;
+    border: none;
+    color: blue;
+    font-size: 1.1rem;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+}
+
+.table button:hover {
+    color: #444;
+    cursor: pointer;
+}

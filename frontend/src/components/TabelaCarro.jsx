@@ -1,6 +1,9 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import OptionButton from "./OptionButton";
+
+import { FaPen, FaEye, FaTrash } from "react-icons/fa";
 
 import "./TabelaCarro.css";
 
@@ -39,7 +42,26 @@ function TabelaCarro(props) {
                 <td>{objeto.placa}</td>
                 <td>{objeto.velocidademax + " Km/h"}</td>
                 <td>{objeto.estacionamento.nome}</td>
-                <td>OPTIONS</td>
+                <td>
+                  <OptionButton
+                    title="Editar Veículo"
+                    btnText={<FaPen />}
+                    url="/atualizar/carros"
+                    id={objeto.id}
+                  />
+                  <OptionButton
+                    title="Visualizar Veículo"
+                    btnText={<FaEye />}
+                    url="/visualizar/carros"
+                    id={objeto.id}
+                  />
+                  <OptionButton
+                    title="Remover Veículo"
+                    btnText={<FaTrash />}
+                    url="/remover/carros"
+                    id={objeto.id}
+                  />
+                </td>
               </tr>
             );
           })}
