@@ -1,7 +1,12 @@
 import React from "react";
+import TabelaCarro from "../components/TabelaCarro";
 
 function ConsultaCarros() {
-  return <h1>Consulta carros</h1>;
+  return (
+    <div>
+      <TabelaCarro endpoint="http://localhost:8080/carros" />
+    </div>
+  );
 }
 
 export default ConsultaCarros;

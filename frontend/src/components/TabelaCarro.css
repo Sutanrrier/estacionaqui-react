@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.table-container {
+    text-align: center;
+    padding: 2rem;
+}
+
+.table {
+    border-collapse: collapse;
+    font-size: 1.2rem;
+    margin: 1rem auto 0 auto;
+    width: 75%;
+}
+
+.table td,
+.table th {
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+.table th {
+    background-color: lightcyan;
+}
+
+.table td {
+    background-color: whitesmoke;
+}
