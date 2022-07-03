@@ -5,7 +5,6 @@ function OptionButton(props) {
   let navigate = useNavigate();
 
   function handleClickButton() {
-    console.log(props);
     navigate(`${props.url}/${props.id}`);
   }
 

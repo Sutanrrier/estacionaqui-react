@@ -5,7 +5,7 @@ import OptionButton from "./OptionButton";
 
 import { FaPen, FaEye, FaTrash } from "react-icons/fa";
 
-import "./TabelaCarro.css";
+import "./TabelaStyle.css";
 
 function TabelaCarro(props) {
   const endpoint = props.endpoint;
