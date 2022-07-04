@@ -9,7 +9,11 @@ function RemoverCarros() {
   return (
     <div className="container">
       <h1>Remover Veículo - ID: {id}</h1>
-      <DeleteButton btnText="Remover Veículo" endpoint={endpoint} />
+      <DeleteButton
+        btnText="Remover Veículo"
+        endpoint={endpoint}
+        type="Veículo"
+      />
     </div>
   );
 }

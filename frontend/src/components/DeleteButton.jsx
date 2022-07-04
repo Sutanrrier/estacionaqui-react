@@ -15,7 +15,7 @@ function DeleteButton(props) {
 
   function handleClick() {
     fetch(endpoint, options).then(() => {
-      alert("Veículo removido com sucesso!");
+      alert(`${props.type} removido com sucesso!`);
       navigate("/");
     });
   }

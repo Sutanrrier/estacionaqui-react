@@ -9,7 +9,11 @@ function RemoverEstacionamentos() {
   return (
     <div className="container">
       <h1>Remover Estacionamento - ID: {id}</h1>
-      <DeleteButton btnText="Remover Estacionamento" endpoint={endpoint} />
+      <DeleteButton
+        btnText="Remover Estacionamento"
+        endpoint={endpoint}
+        type="Estacionamento"
+      />
     </div>
   );
 }
