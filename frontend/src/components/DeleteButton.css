@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.remove-section {
+    padding: 1rem;
+}
+
+.remove-button {
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.5em;
+    width: 40%;
+}
+
+.remove-button:hover {
+    cursor: pointer;
+    background-color: red;
+    transition: all ease 0.1s;
+}
