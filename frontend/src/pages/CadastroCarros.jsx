@@ -1,12 +1,9 @@
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 
 function CadastroCarros() {
-  //Pega o id do carro com base no endpoint atual da URL.
-  let { id } = useParams();
-
   const endpointEstacionamentos = "http://localhost:8080/estacionamentos";
 
   const [estacionamentos, setEstacionamentos] = useState([]);
