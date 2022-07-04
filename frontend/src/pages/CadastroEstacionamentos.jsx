@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
+import "./Forms.css";
+
 function CadastroEstacionamentos() {
   let navigate = useNavigate();
   const { register, handleSubmit } = useForm();

@@ -2,6 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+import "./Forms.css";
+
 function VisualizarCarros() {
   //Pega o id do carro com base no endpoint atual da URL.
   let { id } = useParams();
