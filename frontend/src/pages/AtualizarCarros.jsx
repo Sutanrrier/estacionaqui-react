@@ -19,7 +19,7 @@ function AtualizarCarros() {
     const myHeaders = new Headers();
     myHeaders.append("Content-type", "application/json; charset=UTF-8");
 
-    const endopointCarros = `http://localhost:8080/carros/${id}`;
+    const endpointCarros = `http://localhost:8080/carros/${id}`;
     const body = {
       id: data.id,
       cor: data.cor,
@@ -38,7 +38,7 @@ function AtualizarCarros() {
       headers: myHeaders,
     };
 
-    fetch(endopointCarros, options).then(() => {
+    fetch(endpointCarros, options).then(() => {
       alert("Veículo atualizado com sucesso!");
       navigate("/");
     });
