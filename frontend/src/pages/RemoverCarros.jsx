@@ -4,13 +4,12 @@ import DeleteButton from "../components/DeleteButton";
 
 function RemoverCarros() {
   let { id } = useParams();
+  const endpoint = `http://localhost:8080/carros/${id}`;
 
   return (
     <div className="container">
       <h1>Remover Veículo - ID: {id}</h1>
-      <DeleteButton btnText="Remover Veículo" id={id}>
-        Remover Veículo
-      </DeleteButton>
+      <DeleteButton btnText="Remover Veículo" endpoint={endpoint} />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import "./DeleteButton.css";
 function DeleteButton(props) {
   const navigate = useNavigate();
 
-  const endpointCarros = `http://localhost:8080/carros/${props.id}`;
+  const endpoint = props.endpoint;
   const options = {
     method: "DELETE",
     mode: "cors",
@@ -14,7 +14,7 @@ function DeleteButton(props) {
   };
 
   function handleClick() {
-    fetch(endpointCarros, options).then(() => {
+    fetch(endpoint, options).then(() => {
       alert("Veículo removido com sucesso!");
       navigate("/");
     });
