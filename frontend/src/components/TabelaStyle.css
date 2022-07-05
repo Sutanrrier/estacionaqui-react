@@ -43,3 +43,25 @@
     color: #444;
     cursor: pointer;
 }
+
+.pagination-container {
+    padding: 1rem;
+}
+
+.pagination-button {
+    border: none;
+    background: none;
+    color: blue;
+    font-size: 2rem;
+}
+
+.pagination-button:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.pagination-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 1rem;
+}

@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import "./Forms.css";
 
 function CadastroCarros() {
-  const endpointEstacionamentos = "http://localhost:8080/estacionamentos";
+  const endpointEstacionamentos = "http://localhost:8080/estacionamentos/all";
 
   const [estacionamentos, setEstacionamentos] = useState([]);
   let navigate = useNavigate();

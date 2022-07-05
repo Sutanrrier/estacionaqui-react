@@ -3,7 +3,13 @@ import { useEffect } from "react";
 import { useState } from "react";
 import OptionButton from "./OptionButton";
 
-import { FaPen, FaEye, FaTrash } from "react-icons/fa";
+import {
+  FaPen,
+  FaEye,
+  FaTrash,
+  FaArrowAltCircleLeft,
+  FaArrowAltCircleRight,
+} from "react-icons/fa";
 
 import "./TabelaStyle.css";
 
@@ -87,11 +93,13 @@ function TabelaCarro() {
         </table>
       </div>
       <div className="pagination-container">
-        <span>
-          <button onClick={HandlePaginaAnterior}>PÁGINA ANTERIOR</button>
-          <span>Página {page + 1}</span>
-          <button onClick={HandleProximaPagina}>PRÓXIMA PÁGINA</button>
-        </span>
+        <button className="pagination-button" onClick={HandlePaginaAnterior}>
+          <FaArrowAltCircleLeft />
+        </button>
+        <span className="pagination-text">Página {page + 1}</span>
+        <button className="pagination-button" onClick={HandleProximaPagina}>
+          <FaArrowAltCircleRight />
+        </button>
       </div>
     </div>
   );
