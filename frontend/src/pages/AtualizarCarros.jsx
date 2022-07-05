@@ -47,7 +47,7 @@ function AtualizarCarros() {
   useEffect(() => {
     fetch(endpointEstacionamentos)
       .then((response) => response.json())
-      .then((dados) => setEstacionamentos(dados));
+      .then((dados) => setEstacionamentos(dados.content));
   }, []);
 
   return (
