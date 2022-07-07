@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import OptionButton from "./OptionButton";
+import OptionButton from "../OptionButton";
 
 import {
   FaPen,
@@ -11,7 +11,7 @@ import {
   FaArrowAltCircleRight,
 } from "react-icons/fa";
 
-import "./TabelaStyle.css";
+import "./styles.css";
 
 function TabelaCarro() {
   const endpoint = "http://localhost:8080/carros";

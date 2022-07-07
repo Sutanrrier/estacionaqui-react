@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import "./RedirectOption.css";
+import "./styles.css";
 
 function RedirectOption(props) {
   let navigate = useNavigate();

@@ -1,7 +1,7 @@
 import React from "react";
 
-import logo from "../images/estacionAquiLogo.svg";
-import "./Home.css";
+import logo from "../../images/estacionAquiLogo.svg";
+import "./styles.css";
 
 function Home() {
   return (

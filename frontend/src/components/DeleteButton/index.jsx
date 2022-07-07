@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import "./DeleteButton.css";
+import "./styles.css";
 
 function DeleteButton(props) {
   const navigate = useNavigate();

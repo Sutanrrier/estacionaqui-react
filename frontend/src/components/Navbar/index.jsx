@@ -1,8 +1,8 @@
 import React from "react";
 
 import { NavLink } from "react-router-dom";
-import "./Navbar.css";
-import logo from "../images/estacionAquiLogo.svg";
+import "./styles.css";
+import logo from "../../images/estacionAquiLogo.svg";
 
 function Navbar() {
   return (

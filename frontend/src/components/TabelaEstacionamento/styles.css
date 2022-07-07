@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.table-container {
+    text-align: center;
+    padding: 2rem;
+}
+
+.table {
+    border-collapse: collapse;
+    font-size: 1.2rem;
+    margin: 1rem auto 0 auto;
+    width: 75%;
+}
+
+.table td,
+.table th {
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+.table th {
+    background-color: lightcyan;
+}
+
+.table td {
+    background-color: whitesmoke;
+}
+
+.table button {
+    background: none;
+    border: none;
+    color: blue;
+    font-size: 1.1rem;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+}
+
+.table button:hover {
+    color: #444;
+    cursor: pointer;
+}
+
+.pagination-container {
+    padding: 1rem;
+}
+
+.pagination-button {
+    border: none;
+    background: none;
+    color: blue;
+    font-size: 2rem;
+}
+
+.pagination-button:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.pagination-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 1rem;
+}
