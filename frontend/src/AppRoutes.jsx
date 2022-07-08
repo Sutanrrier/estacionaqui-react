@@ -18,6 +18,8 @@ import VisualizarCarros from "./pages/VisualizarCarros";
 import VisualizarEstacionamentos from "./pages/VisualizarEstacionamentos";
 import RemoverCarros from "./pages/RemoverCarros";
 import RemoverEstacionamentos from "./pages/RemoverEstacionamentos";
+import SucessoCarro from "./pages/SucessoCarro";
+import SucessoEstacionamento from "./pages/SucessoEstacionamento";
 
 function AppRoutes() {
   return (
@@ -39,6 +41,12 @@ function AppRoutes() {
         <Route
           path="/cadastro/estacionamentos"
           element={<CadastroEstacionamentos />}
+        />
+
+        <Route path="/sucesso/carros" element={<SucessoCarro />} />
+        <Route
+          path="/sucesso/estacionamentos"
+          element={<SucessoEstacionamento />}
         />
 
         <Route path="/atualizar/carros/:id" element={<AtualizarCarros />} />

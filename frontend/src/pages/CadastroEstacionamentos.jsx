@@ -1,12 +1,15 @@
+import "./Forms.css";
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-
-import "./Forms.css";
+import { useDispatch } from "react-redux";
+import { estacionamentoAtualAtivo } from "../reducers/estacionamentoSlice";
 
 function CadastroEstacionamentos() {
   let navigate = useNavigate();
   const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
 
   const onSubmit = (data) => {
     const myHeaders = new Headers();
@@ -26,8 +29,9 @@ function CadastroEstacionamentos() {
     };
 
     fetch(endpoint, options).then(() => {
+      dispatch(estacionamentoAtualAtivo(body));
       alert("Estacionamento cadastrado com suceso!");
-      navigate("/");
+      navigate("/sucesso/estacionamentos");
     });
   };
 

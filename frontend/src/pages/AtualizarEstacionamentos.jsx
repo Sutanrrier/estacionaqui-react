@@ -1,15 +1,17 @@
+import "./Forms.css";
+
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-
-import "./Forms.css";
+import { useDispatch } from "react-redux";
+import { estacionamentoAtualAtivo } from "../reducers/estacionamentoSlice";
 
 function AtualizarEstacionamentos() {
   //Pega o id do carro com base no endpoint atual da URL.
   let { id } = useParams();
-
   let navigate = useNavigate();
   const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
 
   const onSubmit = (data) => {
     const myHeaders = new Headers();
@@ -30,8 +32,9 @@ function AtualizarEstacionamentos() {
     };
 
     fetch(endpoint, options).then(() => {
+      dispatch(estacionamentoAtualAtivo(body));
       alert("Estacionamento atualizado com sucesso!");
-      navigate("/");
+      navigate("/sucesso/estacionamentos");
     });
   };
 

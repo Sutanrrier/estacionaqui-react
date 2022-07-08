@@ -9,6 +9,7 @@ export const carSlice = createSlice({
     velocidademax: "",
     dataCriacao: "",
     estacionamento: {
+      id: "",
       nome: "",
     },
   },

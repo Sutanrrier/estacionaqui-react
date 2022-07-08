@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { listarTodosEstacionamentos } from "../reducers/listaEstacionamentoSlice";
+import { carroAtualAtivo } from "../reducers/carSlice";
 
 function CadastroCarros() {
   let navigate = useNavigate(); //Usado para navegar entre as rotas
@@ -41,8 +42,9 @@ function CadastroCarros() {
     };
 
     fetch(endpointCarros, options).then(() => {
+      dispatch(carroAtualAtivo(body));
       alert("Veículo cadastrado com suceso!");
-      navigate("/");
+      navigate("/sucesso/carros");
     });
   };
 

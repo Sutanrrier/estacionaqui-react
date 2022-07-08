@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import "./Forms.css";
 import { useDispatch, useSelector } from "react-redux";
 import { listarTodosEstacionamentos } from "../reducers/listaEstacionamentoSlice";
+import { carroAtualAtivo } from "../reducers/carSlice";
 
 function AtualizarCarros() {
   let { id } = useParams(); //Pega o id da página
@@ -50,8 +51,9 @@ function AtualizarCarros() {
     };
 
     fetch(endpointCarros, options).then(() => {
+      dispatch(carroAtualAtivo(body));
       alert("Veículo atualizado com sucesso!");
-      navigate("/");
+      navigate("/sucesso/carros");
     });
   };
 
