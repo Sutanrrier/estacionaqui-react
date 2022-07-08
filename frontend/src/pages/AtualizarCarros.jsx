@@ -1,20 +1,31 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import "./Forms.css";
+import { useDispatch, useSelector } from "react-redux";
+import { listarTodosEstacionamentos } from "../reducers/listaEstacionamentoSlice";
 
 function AtualizarCarros() {
-  //Pega o id do carro com base no endpoint atual da URL.
-  let { id } = useParams();
+  let { id } = useParams(); //Pega o id da página
+  let navigate = useNavigate(); //Usado para navegar entre as rotas
+  const { register, handleSubmit } = useForm(); //Manipula o formulário
+  const dispatch = useDispatch(); //Permite fazer alterações nos estados globais do STORE
 
-  const endpointEstacionamentos = "http://localhost:8080/estacionamentos";
+  //Selectors que puxam os estados atuais do STORE
+  const listaEstacionamentos = useSelector(
+    (state) => state.listaEstacionamentos.lista
+  );
 
-  const [estacionamentos, setEstacionamentos] = useState([]);
-  let navigate = useNavigate();
-  const { register, handleSubmit } = useForm();
+  useEffect(() => {
+    const endpointEstacionamentos = "http://localhost:8080/estacionamentos/all";
+    fetch(endpointEstacionamentos)
+      .then((response) => response.json())
+      .then((dados) => dispatch(listarTodosEstacionamentos(dados)));
+  }, []);
 
+  //Faz o request PUT para o backend a partir dos dados preenchidos no form
   const onSubmit = (data) => {
     const myHeaders = new Headers();
     myHeaders.append("Content-type", "application/json; charset=UTF-8");
@@ -43,12 +54,6 @@ function AtualizarCarros() {
       navigate("/");
     });
   };
-
-  useEffect(() => {
-    fetch(endpointEstacionamentos)
-      .then((response) => response.json())
-      .then((dados) => setEstacionamentos(dados.content));
-  }, []);
 
   return (
     <div className="container">
@@ -97,7 +102,7 @@ function AtualizarCarros() {
             {...register("estacionamento_id")}
             required
           >
-            {estacionamentos.map((dados) => {
+            {listaEstacionamentos.map((dados) => {
               return (
                 <option key={dados.id} value={dados.id}>
                   {dados.nome}

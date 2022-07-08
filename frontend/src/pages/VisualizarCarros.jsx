@@ -1,45 +1,42 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-
 import "./Forms.css";
+
+import React from "react";
+
+import { carroAtualAtivo } from "../reducers/carSlice";
+
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 function VisualizarCarros() {
   //Pega o id do carro com base no endpoint atual da URL.
   let { id } = useParams();
+  const endpoint = `http://localhost:8080/carros/${id}`;
 
-  const [dadosCarro, setDadosCarro] = useState([]);
-  const [dadosEstacionamento, setDadosEstacionamento] = useState([]);
-
-  const endpointCarros = `http://localhost:8080/carros/${id}`;
+  const carro = useSelector((state) => state.carro);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch(endpointCarros)
+    fetch(endpoint)
       .then((response) => response.json())
       .then((dados) => {
-        setDadosCarro(dados);
-        setDadosEstacionamento(dados.estacionamento);
+        dispatch(carroAtualAtivo(dados));
       });
   }, []);
 
   return (
     <div className="container">
-      <h1 className="form-title">Visualizando Veiculo - ID: {id}</h1>
+      <h1 className="form-title">Visualizando Veiculo - ID: {carro.id}</h1>
       <div className="formularioPaginas">
         <label htmlFor="cor">Cor do veículo: </label>
-        <input
-          name="cor"
-          type="text"
-          readOnly="readonly"
-          value={dadosCarro.cor}
-        />
+        <input name="cor" type="text" readOnly="readonly" value={carro.cor} />
 
         <label htmlFor="placa">Placa do veículo: </label>
         <input
           name="placa"
           type="text"
           readOnly="readonly"
-          value={dadosCarro.placa}
+          value={carro.placa}
         />
 
         <label htmlFor="velocidademax">Velocidade Máxima: </label>
@@ -47,7 +44,7 @@ function VisualizarCarros() {
           name="velocidademax"
           type="text"
           readOnly="readonly"
-          value={dadosCarro.velocidademax}
+          value={carro.velocidademax}
         />
 
         <label htmlFor="estacionamento_id">Cadastrado em: </label>
@@ -55,7 +52,7 @@ function VisualizarCarros() {
           name="dataCriacao"
           type="date"
           readOnly="readonly"
-          value={dadosCarro.dataCriacao}
+          value={carro.dataCriacao}
         />
 
         <label htmlFor="estacionamento_id">Estacionado em: </label>
@@ -63,7 +60,7 @@ function VisualizarCarros() {
           name="estacionamento_nome"
           type="text"
           readOnly="readonly"
-          value={dadosEstacionamento.nome}
+          value={carro.estacionamento.nome}
         />
       </div>
     </div>

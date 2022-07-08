@@ -1,17 +1,23 @@
+import "./Forms.css";
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
-
-import "./Forms.css";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { listarTodosEstacionamentos } from "../reducers/listaEstacionamentoSlice";
 
 function CadastroCarros() {
-  const endpointEstacionamentos = "http://localhost:8080/estacionamentos/all";
+  let navigate = useNavigate(); //Usado para navegar entre as rotas
+  const { register, handleSubmit } = useForm(); //Manipula o formulário
+  const dispatch = useDispatch(); //Permite fazer alterações nos estados globais do STORE
 
-  const [estacionamentos, setEstacionamentos] = useState([]);
-  let navigate = useNavigate();
-  const { register, handleSubmit } = useForm();
+  //Selectors que puxam os estados atuais do STORE
+  const listaEstacionamento = useSelector(
+    (state) => state.listaEstacionamentos.lista
+  );
 
+  //Faz o request POST para o backend a partir dos dados preenchidos no form
   const onSubmit = (data) => {
     const myHeaders = new Headers();
     myHeaders.append("Content-type", "application/json; charset=UTF-8");
@@ -41,9 +47,10 @@ function CadastroCarros() {
   };
 
   useEffect(() => {
+    const endpointEstacionamentos = "http://localhost:8080/estacionamentos/all";
     fetch(endpointEstacionamentos)
       .then((response) => response.json())
-      .then((dados) => setEstacionamentos(dados));
+      .then((dados) => dispatch(listarTodosEstacionamentos(dados)));
   }, []);
 
   return (
@@ -84,7 +91,7 @@ function CadastroCarros() {
             {...register("estacionamento_id")}
             required
           >
-            {estacionamentos.map((dados) => {
+            {listaEstacionamento.map((dados) => {
               return (
                 <option key={dados.id} value={dados.id}>
                   {dados.nome}
