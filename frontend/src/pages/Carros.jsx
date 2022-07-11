@@ -1,28 +1,15 @@
 import React from "react";
-import RedirectOption from "../components/RedirectOption";
-
-import searchImage from "../images/searchImage.svg";
-import veiculoImage from "../images/veiculoImage.svg";
-import "./MainPage.css";
+import CarCard from "../components/CarCard";
+import SearchCarCard from "../components/SearchCarCard";
+import { Row } from "react-materialize";
 
 function Carros() {
   return (
-    <div>
-      <div className="content-container">
-        <RedirectOption
-          title="CADASTRO"
-          image={veiculoImage}
-          btnText="Cadastrar novo veículo"
-          url="/cadastro/carros"
-        />
-
-        <RedirectOption
-          title="CONSULTA"
-          image={searchImage}
-          btnText="Consultar veículos atuais"
-          url="/consulta/carros"
-        />
-      </div>
+    <div className="container">
+      <Row>
+        <CarCard />
+        <SearchCarCard />
+      </Row>
     </div>
   );
 }

@@ -1,5 +1,3 @@
-import "./Forms.css";
-
 import React from "react";
 
 import { carroAtualAtivo } from "../reducers/carSlice";

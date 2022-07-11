@@ -1,8 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-
-import "./Forms.css";
 import { useDispatch, useSelector } from "react-redux";
 import { estacionamentoAtualAtivo } from "../reducers/estacionamentoSlice";
 
