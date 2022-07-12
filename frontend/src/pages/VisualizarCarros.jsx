@@ -6,6 +6,9 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import "materialize-css";
+import { TextInput } from "react-materialize";
+
 function VisualizarCarros() {
   //Pega o id do carro com base no endpoint atual da URL.
   let { id } = useParams();
@@ -24,41 +27,46 @@ function VisualizarCarros() {
 
   return (
     <div className="container">
-      <h1 className="form-title">Visualizando Veiculo - ID: {carro.id}</h1>
+      <h2 className="form-title">Visualizando Veiculo - ID: {carro.id}</h2>
       <div className="formularioPaginas">
-        <label htmlFor="cor">Cor do veículo: </label>
-        <input name="cor" type="text" readOnly="readonly" value={carro.cor} />
+        <TextInput
+          label="Cor do veículo"
+          type="text"
+          name="cor"
+          value={carro.cor}
+          readOnly
+        />
 
-        <label htmlFor="placa">Placa do veículo: </label>
-        <input
+        <TextInput
+          label="Placa do veículo"
+          type="text"
           name="placa"
-          type="text"
-          readOnly="readonly"
           value={carro.placa}
+          readOnly
         />
 
-        <label htmlFor="velocidademax">Velocidade Máxima: </label>
-        <input
+        <TextInput
+          label="Velocidade Máxima do veículo"
+          type="text"
           name="velocidademax"
-          type="text"
-          readOnly="readonly"
           value={carro.velocidademax}
+          readOnly
         />
 
-        <label htmlFor="estacionamento_id">Cadastrado em: </label>
-        <input
-          name="dataCriacao"
+        <TextInput
+          label="Cadastrado em"
           type="date"
-          readOnly="readonly"
+          name="velocidademax"
           value={carro.dataCriacao}
+          readOnly
         />
 
-        <label htmlFor="estacionamento_id">Estacionado em: </label>
-        <input
-          name="estacionamento_nome"
+        <TextInput
+          label="Estacionado em"
           type="text"
-          readOnly="readonly"
+          name="estacionamento_nome"
           value={carro.estacionamento.nome}
+          readOnly
         />
       </div>
     </div>

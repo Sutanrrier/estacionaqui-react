@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { estacionamentoAtualAtivo } from "../reducers/estacionamentoSlice";
 
+import "materialize-css";
+import { TextInput } from "react-materialize";
+
 function VisualizarEstacionamentos() {
   //Pega o id do carro com base no endpoint atual da URL.
   let { id } = useParams();
@@ -23,24 +26,24 @@ function VisualizarEstacionamentos() {
 
   return (
     <div className="container">
-      <h1 className="form-title">
+      <h2 className="form-title">
         Visualizando Estacionamento - ID: {estacionamento.id}
-      </h1>
+      </h2>
       <div className="formularioPaginas">
-        <label htmlFor="cor">Nome do estacionamento: </label>
-        <input
-          name="nome"
+        <TextInput
+          label="Nome do estacioanmento"
           type="text"
-          readOnly="readonly"
+          name="nome"
           value={estacionamento.nome}
+          readOnly
         />
 
-        <label htmlFor="estacionamento_id">Cadastrado em: </label>
-        <input
-          name="dataCriacao"
+        <TextInput
+          label="Cadastrado em:"
           type="date"
-          readOnly="readonly"
+          name="dataCriacao"
           value={estacionamento.dataCriacao}
+          readOnly
         />
       </div>
     </div>

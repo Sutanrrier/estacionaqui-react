@@ -8,13 +8,17 @@
     margin: 1rem auto;
 }
 
+.formularioPaginas {
+    margin-top: 4rem;
+}
+
 .formularioPaginas input {
     border-radius: 1rem;
     font-size: 1.2rem;
     width: 100%;
     padding: 0.5rem;
     background-color: darkgray;
-    margin: 1rem auto 1rem auto;
+    margin: 1rem auto 3rem auto;
 
 }
 
