@@ -42,7 +42,7 @@ function TabelaCarro() {
   }
 
   return (
-    <div className="container">
+    <div className="estacionaqui-section-container">
       <div className="table-container">
         <h1 className="table-title">Consulta de Veículos</h1>
 

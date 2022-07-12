@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { listarTodosEstacionamentos } from "../reducers/listaEstacionamentoSlice";
 import { carroAtualAtivo } from "../reducers/carSlice";
 
+import "materialize-css";
+import { TextInput } from "react-materialize";
+
 function AtualizarCarros() {
   let { id } = useParams(); //Pega o id da página
   let navigate = useNavigate(); //Usado para navegar entre as rotas
@@ -14,7 +17,7 @@ function AtualizarCarros() {
   const dispatch = useDispatch(); //Permite fazer alterações nos estados globais do STORE
 
   //Selectors que puxam os estados atuais do STORE
-  const listaEstacionamentos = useSelector(
+  const listaEstacionamento = useSelector(
     (state) => state.listaEstacionamentos.lista
   );
 
@@ -37,7 +40,7 @@ function AtualizarCarros() {
       placa: data.placa,
       velocidademax: parseInt(data.velocidademax),
       estacionamento: {
-        id: parseInt(data.estacionamento_id),
+        id: data.estacionamento_id,
       },
     };
 
@@ -58,52 +61,49 @@ function AtualizarCarros() {
 
   return (
     <div className="container">
-      <h1 className="form-title">Atualizar Veículos</h1>
-      <div className="formularioPaginas">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            type="number"
-            hidden
-            name="id"
-            value={id}
-            {...register("id")}
-            required
-          />
-
-          <label htmlFor="cor">Nova Cor: </label>
-          <input
-            name="cor"
-            type="text"
-            placeholder="Digite a nova cor do veículo"
-            {...register("cor")}
-            required
-          />
-
-          <label htmlFor="placa">Nova Placa: </label>
-          <input
-            name="placa"
-            type="text"
-            placeholder="Digite a nova placa do veículo"
-            {...register("placa")}
-            required
-          />
-
-          <label htmlFor="velocidademax">Velocidade Máxima: </label>
-          <input
-            name="velocidademax"
-            type="number"
-            placeholder="Digite a velocidade máxima do veículo"
-            {...register("velocidademax")}
-            required
-          />
-
-          <label htmlFor="estacionamento_id">Estacionado atualmente: </label>
+      <h1>Atualizar Veículos - ID: {id}</h1>
+      <form className="formularioPaginas" onSubmit={handleSubmit(onSubmit)}>
+        <TextInput
+          hidden
+          type="number"
+          name="id"
+          value={id}
+          {...register("id")}
+          required
+        />
+        <TextInput
+          label="Cor do veículo"
+          type="text"
+          name="cor"
+          {...register("cor")}
+          required
+        />
+        <TextInput
+          label="Placa do veículo"
+          type="text"
+          name="placa"
+          {...register("placa")}
+          required
+        />
+        <TextInput
+          label="Velocidade máxima do veículo"
+          type="number"
+          name="velocidademax"
+          {...register("velocidademax")}
+          required
+        />
+        <div className="input-field col">
           <select
             name="estacionamento_id"
             {...register("estacionamento_id")}
             required
+            style={{ display: "block" }}
+            defaultValue={0}
           >
-            {listaEstacionamentos.map((dados) => {
+            <option value="0" disabled>
+              Escolha um estacionamento
+            </option>
+            {listaEstacionamento.map((dados) => {
               return (
                 <option key={dados.id} value={dados.id}>
                   {dados.nome}
@@ -111,9 +111,10 @@ function AtualizarCarros() {
               );
             })}
           </select>
-          <button type="submit">Atualizar Dados</button>
-        </form>
-      </div>
+        </div>
+
+        <button type="submit">Atualizar Dados</button>
+      </form>
     </div>
   );
 }

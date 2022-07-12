@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { listarTodosEstacionamentos } from "../reducers/listaEstacionamentoSlice";
 import { carroAtualAtivo } from "../reducers/carSlice";
 
+import "materialize-css";
+import { TextInput } from "react-materialize";
+
 function CadastroCarros() {
   let navigate = useNavigate(); //Usado para navegar entre as rotas
   const { register, handleSubmit } = useForm(); //Manipula o formulário
@@ -27,7 +30,7 @@ function CadastroCarros() {
       placa: data.placa,
       velocidademax: parseInt(data.velocidademax),
       estacionamento: {
-        id: parseInt(data.estacionamento_id),
+        id: data.estacionamento_id,
       },
     };
 
@@ -41,6 +44,7 @@ function CadastroCarros() {
 
     fetch(endpointCarros, options).then(() => {
       dispatch(carroAtualAtivo(body));
+      console.log(body);
       alert("Veículo cadastrado com suceso!");
       navigate("/sucesso/carros");
     });
@@ -55,42 +59,41 @@ function CadastroCarros() {
 
   return (
     <div className="container">
-      <h1 className="form-title">Cadastrar novo veículo</h1>
-      <div className="formularioPaginas">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="cor">Cor do veículo: </label>
-          <input
-            name="cor"
-            type="text"
-            placeholder="Digite a cor do veículo"
-            {...register("cor")}
-            required
-          />
+      <h1>Cadastrar novo veículo</h1>
+      <form className="formularioPaginas" onSubmit={handleSubmit(onSubmit)}>
+        <TextInput
+          label="Cor do veículo"
+          type="text"
+          name="cor"
+          {...register("cor")}
+          required
+        />
+        <TextInput
+          label="Placa do veículo"
+          type="text"
+          name="placa"
+          {...register("placa")}
+          required
+        />
+        <TextInput
+          label="Velocidade máxima do veículo"
+          type="number"
+          name="velocidademax"
+          {...register("velocidademax")}
+          required
+        />
 
-          <label htmlFor="placa">Placa do veículo: </label>
-          <input
-            name="placa"
-            type="text"
-            placeholder="Digite a placa do veículo"
-            {...register("placa")}
-            required
-          />
-
-          <label htmlFor="velocidademax">Velocidade Máxima: </label>
-          <input
-            name="velocidademax"
-            type="number"
-            placeholder="Digite a velocidade máxima do veículo"
-            {...register("velocidademax")}
-            required
-          />
-
-          <label htmlFor="estacionamento_id">Estacionado em: </label>
+        <div className="input-field col">
           <select
             name="estacionamento_id"
             {...register("estacionamento_id")}
             required
+            style={{ display: "block" }}
+            defaultValue={0}
           >
+            <option value="0" disabled>
+              Escolha um estacionamento
+            </option>
             {listaEstacionamento.map((dados) => {
               return (
                 <option key={dados.id} value={dados.id}>
@@ -99,9 +102,10 @@ function CadastroCarros() {
               );
             })}
           </select>
-          <button type="submit">Cadastrar Veículo</button>
-        </form>
-      </div>
+        </div>
+
+        <button type="submit">Cadastrar Veículo</button>
+      </form>
     </div>
   );
 }

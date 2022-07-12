@@ -14,7 +14,7 @@ function CarCard() {
     <Col m={6} s={12}>
       <Card
         actions={[
-          <a onClick={handleClick} style={{ cursor: "pointer" }}>
+          <a key="1" onClick={handleClick} style={{ cursor: "pointer" }}>
             Cadastrar novo estacionamento
           </a>,
         ]}
