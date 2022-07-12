@@ -4,6 +4,9 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { estacionamentoAtualAtivo } from "../reducers/estacionamentoSlice";
 
+import "materialize-css";
+import { TextInput } from "react-materialize";
+
 function AtualizarEstacionamentos() {
   //Pega o id do carro com base no endpoint atual da URL.
   let { id } = useParams();
@@ -41,20 +44,19 @@ function AtualizarEstacionamentos() {
       <h1 className="form-title">Atualizar Estacionamento</h1>
       <div className="formularioPaginas">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            type="number"
+          <TextInput
             hidden
+            type="number"
             name="id"
             value={id}
             {...register("id")}
             required
           />
 
-          <label htmlFor="nome">Novo nome: </label>
-          <input
-            name="nome"
+          <TextInput
+            label="Novo nome do estacionamento"
             type="text"
-            placeholder="Digite o novo nome do estacionamento"
+            name="nome"
             {...register("nome")}
             required
           />

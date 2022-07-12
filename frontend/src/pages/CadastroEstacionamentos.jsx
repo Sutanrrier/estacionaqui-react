@@ -4,6 +4,9 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { estacionamentoAtualAtivo } from "../reducers/estacionamentoSlice";
 
+import "materialize-css";
+import { TextInput } from "react-materialize";
+
 function CadastroEstacionamentos() {
   let navigate = useNavigate();
   const { register, handleSubmit } = useForm();
@@ -35,21 +38,18 @@ function CadastroEstacionamentos() {
 
   return (
     <div className="container">
-      <h1 className="form-title">Cadastrar novo estacionamento</h1>
-      <div className="formularioPaginas">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="nome">Nome do estacionamento: </label>
-          <input
-            name="nome"
-            type="text"
-            placeholder="Digite o nome do estacionamento"
-            {...register("nome")}
-            required
-          />
+      <h2 className="form-title">Cadastrar novo estacionamento</h2>
+      <form className="formularioPaginas" onSubmit={handleSubmit(onSubmit)}>
+        <TextInput
+          label="Nome do estacionamento"
+          type="text"
+          name="nome"
+          {...register("nome")}
+          required
+        />
 
-          <button type="submit">Cadastrar Estacionamento</button>
-        </form>
-      </div>
+        <button type="submit">Cadastrar Estacionamento</button>
+      </form>
     </div>
   );
 }

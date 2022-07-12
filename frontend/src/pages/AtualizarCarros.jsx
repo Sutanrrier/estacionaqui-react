@@ -72,14 +72,14 @@ function AtualizarCarros() {
           required
         />
         <TextInput
-          label="Cor do veículo"
+          label="Nova cor do veículo"
           type="text"
           name="cor"
           {...register("cor")}
           required
         />
         <TextInput
-          label="Placa do veículo"
+          label="Nova placa do veículo"
           type="text"
           name="placa"
           {...register("placa")}
