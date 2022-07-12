@@ -11,7 +11,8 @@ import {
   FaArrowAltCircleRight,
 } from "react-icons/fa";
 
-import "./styles.css";
+import "materialize-css";
+import { Table } from "react-materialize";
 
 function TabelaEstacionamento() {
   const endpoint = "http://localhost:8080/estacionamentos";
@@ -43,10 +44,9 @@ function TabelaEstacionamento() {
 
   return (
     <div className="container">
-      <div className="table-container">
-        <h1 className="table-title">Consulta de Estacionamentos</h1>
-
-        <table className="table">
+      <div>
+        <h1>Consulta de Estacionamentos</h1>
+        <Table centered>
           <thead>
             <tr>
               <th>ID</th>
@@ -84,8 +84,9 @@ function TabelaEstacionamento() {
               );
             })}
           </tbody>
-        </table>
+        </Table>
       </div>
+
       <div className="pagination-container">
         <button className="pagination-button" onClick={HandlePaginaAnterior}>
           <FaArrowAltCircleLeft />

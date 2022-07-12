@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import "./styles.css";
 function OptionButton(props) {
   let navigate = useNavigate();
 
@@ -9,7 +10,11 @@ function OptionButton(props) {
   }
 
   return (
-    <button title={props.title} onClick={handleClickButton}>
+    <button
+      className="estacionaaqui-option-button"
+      title={props.title}
+      onClick={handleClickButton}
+    >
       {props.btnText}
     </button>
   );

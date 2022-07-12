@@ -3,9 +3,9 @@ import TabelaEstacionamento from "../components/TabelaEstacionamento";
 
 function ConsultaEstacionamentos() {
   return (
-    <div>
+    <>
       <TabelaEstacionamento />
-    </div>
+    </>
   );
 }
 

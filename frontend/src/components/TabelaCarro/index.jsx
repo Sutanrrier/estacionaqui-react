@@ -3,6 +3,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import OptionButton from "../OptionButton";
 
+import "materialize-css";
+import { Table } from "react-materialize";
+
 import {
   FaPen,
   FaEye,
@@ -10,8 +13,6 @@ import {
   FaArrowAltCircleLeft,
   FaArrowAltCircleRight,
 } from "react-icons/fa";
-
-import "./styles.css";
 
 function TabelaCarro() {
   const endpoint = "http://localhost:8080/carros";
@@ -42,11 +43,11 @@ function TabelaCarro() {
   }
 
   return (
-    <div className="estacionaqui-section-container">
-      <div className="table-container">
-        <h1 className="table-title">Consulta de Veículos</h1>
+    <div className="container">
+      <div>
+        <h1>Consulta de Veículos</h1>
 
-        <table className="table">
+        <Table centered>
           <thead>
             <tr>
               <th>ID</th>
@@ -90,8 +91,9 @@ function TabelaCarro() {
               );
             })}
           </tbody>
-        </table>
+        </Table>
       </div>
+
       <div className="pagination-container">
         <button className="pagination-button" onClick={HandlePaginaAnterior}>
           <FaArrowAltCircleLeft />
