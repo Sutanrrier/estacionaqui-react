@@ -29,11 +29,18 @@ function CadastroEstacionamentos() {
       headers: myHeaders,
     };
 
-    fetch(endpoint, options).then(() => {
-      dispatch(estacionamentoAtualAtivo(body));
-      alert("Estacionamento cadastrado com suceso!");
-      navigate("/sucesso/estacionamentos");
-    });
+    fetch(endpoint, options)
+      .then((response) => response.json())
+      .then((data) => {
+        const resEstacionamento = {
+          id: data.id,
+          nome: data.nome,
+          dataCriacao: data.dataCriacao,
+        };
+        dispatch(estacionamentoAtualAtivo(resEstacionamento));
+        alert("Estacionamento cadastrado com suceso!");
+        navigate("/sucesso/estacionamentos");
+      });
   };
 
   return (

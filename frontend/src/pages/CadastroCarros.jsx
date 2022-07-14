@@ -42,12 +42,20 @@ function CadastroCarros() {
       headers: myHeaders,
     };
 
-    fetch(endpointCarros, options).then(() => {
-      dispatch(carroAtualAtivo(body));
-      console.log(body);
-      alert("Veículo cadastrado com suceso!");
-      navigate("/sucesso/carros");
-    });
+    fetch(endpointCarros, options)
+      .then((response) => response.json())
+      .then((data) => {
+        const resCarro = {
+          id: data.id,
+          cor: data.cor,
+          placa: data.placa,
+          velocidademax: parseInt(data.velocidademax),
+          dataCriacao: data.dataCriacao,
+        };
+        dispatch(carroAtualAtivo(resCarro));
+        alert("Veículo cadastrado com suceso!");
+        navigate("/sucesso/carros");
+      });
   };
 
   useEffect(() => {

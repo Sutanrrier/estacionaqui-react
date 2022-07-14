@@ -20,7 +20,6 @@ export const carSlice = createSlice({
       state.placa = action.payload.placa;
       state.velocidademax = action.payload.velocidademax;
       state.dataCriacao = action.payload.dataCriacao;
-      state.estacionamento.nome = action.payload.estacionamento.nome;
     },
   },
 });

@@ -1,6 +1,9 @@
 import "./styles.css";
 import { useSelector } from "react-redux";
 
+import "materialize-css";
+import { TextInput } from "react-materialize";
+
 function FormViewer() {
   const carro = useSelector((state) => state.carro);
 
@@ -10,23 +13,44 @@ function FormViewer() {
         INFORMAÇÕES DO VEÍCULO ENVIADAS COM SUCESSO!
       </h1>
       <div className="formularioPaginas">
-        <label htmlFor="cor">Cor do veículo: </label>
-        <input name="cor" type="text" readOnly="readonly" value={carro.cor} />
-
-        <label htmlFor="placa">Placa do veículo: </label>
-        <input
-          name="placa"
+        <TextInput
+          label="Seu ID para o veículo"
           type="text"
-          readOnly="readonly"
-          value={carro.placa}
+          name="id"
+          value={carro.id}
+          readOnly
         />
 
-        <label htmlFor="velocidademax">Velocidade Máxima: </label>
-        <input
-          name="velocidademax"
+        <TextInput
+          label="Cor do veículo"
           type="text"
-          readOnly="readonly"
+          name="cor"
+          value={carro.cor}
+          readOnly
+        />
+
+        <TextInput
+          label="Placa do veículo"
+          type="text"
+          name="placa"
+          value={carro.placa}
+          readOnly
+        />
+
+        <TextInput
+          label="Velocidade Máxima do veículo"
+          type="text"
+          name="velocidademax"
           value={carro.velocidademax}
+          readOnly
+        />
+
+        <TextInput
+          label="Cadastrado em"
+          type="date"
+          name="velocidademax"
+          value={carro.dataCriacao}
+          readOnly
         />
       </div>
     </div>
