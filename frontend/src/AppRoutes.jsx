@@ -19,6 +19,7 @@ import RemoverCarros from "./pages/RemoverCarros";
 import RemoverEstacionamentos from "./pages/RemoverEstacionamentos";
 import SucessoCarro from "./pages/SucessoCarro";
 import SucessoEstacionamento from "./pages/SucessoEstacionamento";
+import RelatorioPage from "./pages/RelatorioPage";
 
 function AppRoutes() {
   return (
@@ -29,6 +30,7 @@ function AppRoutes() {
         <Route path="/" element={<App />} />
         <Route path="/carros" element={<Carros />} />
         <Route path="/estacionamentos" element={<Estacionamentos />} />
+        <Route path="/relatorios" element={<RelatorioPage />} />
 
         <Route path="/consulta/carros" element={<ConsultaCarros />} />
         <Route

@@ -34,6 +34,9 @@ function NavigationBar() {
       <NavLink className="navigation-link" to="/estacionamentos">
         Estacionamentos
       </NavLink>
+      <NavLink className="navigation-link" to="/relatorios">
+        Relatórios
+      </NavLink>
     </Navbar>
   );
 }
