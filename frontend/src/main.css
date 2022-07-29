@@ -23,3 +23,22 @@
     font-weight: bold;
     margin: 0 1rem;
 }
+
+.estacionaqui-relatorio-allcarros {
+    background-color: #ee6e73;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 3rem auto;
+}
+
+.estacionaqui-relatorio-label {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem auto;
+    padding: 1rem;
+}
+
+.estacionaqui-relatorio-button {
+    width: 50%;
+}
