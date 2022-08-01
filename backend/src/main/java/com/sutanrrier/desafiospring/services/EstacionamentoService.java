@@ -1,5 +1,6 @@
 package com.sutanrrier.desafiospring.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -28,6 +29,10 @@ public class EstacionamentoService {
 		return repository.findAll(pageable);
 	}
 	
+	public List<Estacionamento> getAllEstacionamentos(){
+		return repository.findAll();
+	}
+	
 	public Optional<Estacionamento> findById(Integer id){
 		return repository.findById(id);
 	}
@@ -41,4 +46,5 @@ public class EstacionamentoService {
 	public void delete(Estacionamento estacionamento) {
 		repository.delete(estacionamento);
 	}
+	
 }
