@@ -4,9 +4,12 @@ function RelatorioCarros() {
   function handleClick() {
     const url = "http://localhost:8080/carros/relatorio/all";
 
-    fetch(url).then(() => {
-      alert("Relatório gerado com sucesso!");
-    });
+    fetch(url)
+      .then((response) => response.blob())
+      .then((data) => {
+        const url = URL.createObjectURL(data);
+        window.open(url, "__blank", "noopener,noreferrer");
+      });
   }
 
   return (

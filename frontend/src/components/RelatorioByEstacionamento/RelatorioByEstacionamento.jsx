@@ -16,9 +16,12 @@ function RelatorioByEstacionamento() {
   const onSubmit = (data) => {
     const url = `http://localhost:8080/carros/relatorio/${data.estacionamento_id}`;
 
-    fetch(url).then(() => {
-      alert("Relatório gerado com sucesso!");
-    });
+    fetch(url)
+      .then((response) => response.blob())
+      .then((data) => {
+        const url = URL.createObjectURL(data);
+        window.open(url, "__blank", "noopener,noreferrer");
+      });
   };
 
   useEffect(() => {
